@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react'
 import Card from '../components/Card';
-import DetailMovie from './DetailMovie';
+// import DetailMovie from './DetailMovie';
 // import { SocialIcon } from 'react-social-icons';
 
 export default class Homepage extends Component {
