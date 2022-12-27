@@ -70,7 +70,7 @@ export class DetailMovie extends Component {
                         <h1 className='text-white'>{this.state.Detail.title}</h1>
 
                         {/* Genres */}
-                        <div className='flex gap-2'>
+                        <div className='flex flex-wrap gap-2'>
                             {this.state.Genres.map((Genres, idx) => {
                                 return (
                                     <span key={idx} className="badge font-poppins">{Genres.name}</span>
@@ -91,6 +91,8 @@ export class DetailMovie extends Component {
 
                 <article className='bg-primary px-4 py-6'>
                     <h1 className='mb-6'>Cast</h1>
+
+                    {/* CAST */}
                     <div className='grid gap-8 px-4'>
                         {this.state.Cast.slice(0, 6).map((Cast, idx) => {
                             return (
@@ -105,6 +107,10 @@ export class DetailMovie extends Component {
                             )
                         })}
                     </div>
+
+                    <span className="badge font-poppins">science fiction</span>
+                    <span className="badge font-poppins">science fiction</span>
+                    <span className="badge font-poppins">science fiction</span>
                 </article>
 
             </section >
