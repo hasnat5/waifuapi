@@ -107,10 +107,6 @@ export class DetailMovie extends Component {
                             )
                         })}
                     </div>
-
-                    <span className="badge font-poppins">science fiction</span>
-                    <span className="badge font-poppins">science fiction</span>
-                    <span className="badge font-poppins">science fiction</span>
                 </article>
 
             </section >
