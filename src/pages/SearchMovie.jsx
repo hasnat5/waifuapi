@@ -25,7 +25,7 @@ export class SearchMovie extends Component {
             })
     }
 
-    componentDidUpdate(pP, pS) {
+    componentDidUpdate(pP) {
         if (pP.title !== this.props.title) {
             axios.get(`${process.env.REACT_APP_BASE_URL}/search/movie/?query=${this.props.title}`, {
                 params: {
