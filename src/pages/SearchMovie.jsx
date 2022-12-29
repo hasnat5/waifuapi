@@ -14,7 +14,7 @@ export class SearchMovie extends Component {
     componentDidMount() {
         console.log(this.props.title)
 
-        axios.get(`${process.env.REACT_APP_BASE_URL}/search/movie/?query=${this.props.title}`, {
+        axios.get(`https://api.themoviedb.org/3/search/movie/?query=${this.props.title}`, {
             params: {
                 api_key: process.env.REACT_APP_TMDB_KEY
             }
@@ -27,7 +27,7 @@ export class SearchMovie extends Component {
 
     componentDidUpdate(pP) {
         if (pP.title !== this.props.title) {
-            axios.get(`${process.env.REACT_APP_BASE_URL}/search/movie/?query=${this.props.title}`, {
+            axios.get(`https://api.themoviedb.org/3/search/movie/?query=${this.props.title}`, {
                 params: {
                     api_key: process.env.REACT_APP_TMDB_KEY
                 }
