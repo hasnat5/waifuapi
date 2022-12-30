@@ -37,10 +37,7 @@ export class GenreList extends Component {
                                     <h2>{Film.title}</h2>
                                     <p>{Film.vote_average}</p>
                                     <p>{Film.release_date}</p>
-
                                 </div>
-
-
                             </div>
                         )
                     })}
