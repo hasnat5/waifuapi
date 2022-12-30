@@ -1,5 +1,6 @@
-import axios from 'axios'
 import React, { Component } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export class GenreList extends Component {
     constructor(props) {
@@ -23,6 +24,11 @@ export class GenreList extends Component {
             })
     }
 
+    handleTampil(Film) {
+        console.log(Film.id)
+        this.props.detailHandle(Film.id)
+    }
+
     render() {
         return (
             <section className='container mx-auto'>
@@ -30,7 +36,7 @@ export class GenreList extends Component {
                     <h1>Result of {this.props.genre.name}</h1>
                     {this.state.GenreResult.map((Film, idx) => {
                         return (
-                            <div key={idx} className='flex gap-5 px-4'>
+                            <Link onClick={this.handleTampil.bind(this, Film)} to='/detail' key={idx} className='flex gap-5 px-4' >
                                 <img className='w-3/12 rounded-xl' src={`${process.env.REACT_APP_IMG_URL}${Film.poster_path}`} alt="" />
 
                                 <div>
@@ -38,11 +44,11 @@ export class GenreList extends Component {
                                     <p>{Film.vote_average}</p>
                                     <p>{Film.release_date}</p>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })}
                 </div>
-            </section>
+            </section >
         )
     }
 }

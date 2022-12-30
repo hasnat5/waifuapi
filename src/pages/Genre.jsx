@@ -35,7 +35,7 @@ export class Genre extends Component {
                 {this.state.Genre.map(Genre => {
                     return (
                         <div key={Genre.id}>
-                            <Link to={`./name`} onClick={this.handleId.bind(this, Genre)} >{Genre.name}</Link>
+                            <Link to={`./${Genre.name}`} onClick={this.handleId.bind(this, Genre)} >{Genre.name}</Link>
                         </div>
                     )
                 })}

@@ -30,9 +30,9 @@ function App() {
         <Route path='/' element={<Homepage onSubmit={getData} />} />
         <Route path='/genre' >
           <Route index element={<Genre onSubmit={getGenre} />} />
-          <Route path='name' element={<GenreList genre={genre} />} />
+          <Route path=':name' element={<GenreList detailHandle={getData} genre={genre} />} />
         </Route>
-        <Route path='/detail/' element={<DetailMovie data={url} />} />
+        <Route path='/detail' element={<DetailMovie data={url} />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
       <Footer />
