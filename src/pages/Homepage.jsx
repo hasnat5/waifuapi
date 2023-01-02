@@ -42,17 +42,17 @@ export default class Homepage extends Component {
                 </section>
 
                 <section className=''>
-                    <h1 className='font-poppins px-4 mb-4'>Result Search</h1>
+                    <h2 className='font-poppins px-4 mb-4'>Result Search</h2>
                     <SearchMovie title={this.state.Title} onSubmit={this.getData} />
                 </section>
 
                 <section className='mb-5'>
-                    <h1 className='font-poppins px-4 mb-4'>Discover</h1>
+                    <h2 className='font-poppins px-4 mb-4'>Discover</h2>
                     <Discover onSubmit={this.getData} />
                 </section>
 
                 <section className=''>
-                    <h1 className='font-poppins px-4 mb-4'>Trending</h1>
+                    <h2 className='font-poppins px-4 mb-4'>Trending</h2>
                     <Trending onSubmit={this.getData} />
                 </section>
 

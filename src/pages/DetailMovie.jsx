@@ -101,7 +101,7 @@ export class DetailMovie extends Component {
                                     </div>
                                     <div className='self-center'>
                                         <p className=''>{Cast.character}</p>
-                                        <h2 className='font-bold'>{Cast.name}</h2>
+                                        <h3 className='font-bold'>{Cast.name}</h3>
                                     </div>
                                 </div>
                             )

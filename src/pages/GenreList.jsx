@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { BsFillStarFill } from 'react-icons/bs'
 
 export class GenreList extends Component {
     constructor(props) {
@@ -37,11 +38,14 @@ export class GenreList extends Component {
                     {this.state.GenreResult.map((Film, idx) => {
                         return (
                             <Link onClick={this.handleTampil.bind(this, Film)} to='/detail' key={idx} className='flex gap-5 px-4' >
-                                <img className='w-3/12 rounded-xl' src={`${process.env.REACT_APP_IMG_URL}${Film.poster_path}`} alt="" />
+                                <img className='w-3/12 h-fit rounded-xl' src={`${process.env.REACT_APP_IMG_URL}${Film.poster_path}`} alt="" />
 
                                 <div>
-                                    <h2>{Film.title}</h2>
-                                    <p>{Film.vote_average}</p>
+                                    <h3>{Film.title}</h3>
+                                    <div className='flex items-center gap-2'>
+                                        <BsFillStarFill className='text-yellow-400' />
+                                        <p>{Film.vote_average}</p>
+                                    </div>
                                     <p>{Film.release_date}</p>
                                 </div>
                             </Link>
