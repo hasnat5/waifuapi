@@ -8,7 +8,7 @@ const About = () => {
             <div className='grid px-4 gap-4'>
                 <div>
                     <h2 className='font-bold my-3'>Hasnat Ferdiananda</h2>
-                    <p>Tech Enthuisiast (Student / Developer / Weeb)</p>
+                    <p>Tech Enthusiast (Student / Developer / Weeb)</p>
                 </div>
                 <img className='justify-self-center w-24 rounded-full border-2 border-white' src={hasnatDev} alt="developer_img" />
 
