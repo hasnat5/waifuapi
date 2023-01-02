@@ -19,7 +19,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-center">
-                <Link to={'./'} className="btn btn-ghost normal-case text-xl">Myfilmlist</Link>
+                <Link to={'/'} className="btn btn-ghost normal-case text-xl">Myfilmlist</Link>
             </div>
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className="bg-orange-50 footer footer-center p-10 text-base-content rounded">
+        <footer className="bg-zinc-800 text-white footer footer-center p-10 rounded">
             <div className="grid grid-flow-col gap-4">
                 <a href='https://github.com/hasnat5/waifuapi' className="link link-hover">About us</a>
                 <a href='https://github.com/hasnat5/waifuapi' className="link link-hover">Contact</a>

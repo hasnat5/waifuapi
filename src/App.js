@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import DetailMovie from './pages/DetailMovie';
@@ -5,9 +6,9 @@ import Genre from './pages/Genre';
 import GenreList from './pages/GenreList';
 import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
-import './App.css';
 import Footer from './components/Footer';
-import React, { useState } from 'react';
+import About from './pages/About';
+import './App.css';
 
 function App() {
   const [url, setUrl] = useState('')
@@ -33,6 +34,7 @@ function App() {
           <Route path=':name' element={<GenreList detailHandle={getData} genre={genre} />} />
         </Route>
         <Route path='/detail' element={<DetailMovie data={url} />} />
+        <Route path='/about' element={<About />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
       <Footer />
