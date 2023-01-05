@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Discover from './Discover'
 import jumbotron from '../assets/backdrop.jpg'
 import Trending from './Trending'
-import SearchMovie from './SearchMovie'
+// import SearchMovie from './SearchMovie'
 // import DetailMovie from './DetailMovie'
 
 // api key
