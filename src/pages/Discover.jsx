@@ -34,7 +34,7 @@ export default class Homepage extends Component {
 
     render() {
         return (
-            <section onSubmit={this.handleTampil} className='container min-w-full' >
+            <section className='container min-w-full' >
                 <div className='grid grid-flow-col-dense overflow-x-scroll'>
                     {this.state.Film.map((Film, idx) => {
                         return (

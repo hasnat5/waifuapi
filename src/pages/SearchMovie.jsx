@@ -8,7 +8,9 @@ export class SearchMovie extends Component {
 
         this.state = {
             Search: [],
+            isClick: 'isClick'
         }
+
     }
 
     componentDidMount() {
@@ -39,15 +41,15 @@ export class SearchMovie extends Component {
         }
     }
 
-
     handleTampil(Film) {
         console.log(Film.id)
         this.props.onSubmit(Film.id)
+        this.props.close(this.state.isClick)
     }
 
     render() {
         return (
-            <section className='container min-w-full' >
+            <section className='container min-w-full mt-9' >
                 <div className='grid grid-flow-col-dense overflow-x-scroll'>
                     {this.state.Search.map((Search, idx) => {
                         return (

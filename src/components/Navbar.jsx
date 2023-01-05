@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SearchMobile from '../pages/SearchMobile'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const [isClick, setClick] = useState(false)
+    const handleChange = () => {
+        return setClick(!isClick);
+    };
+
+    let handleClose = (data) => {
+        return setClick(data);
+    }
+
+    const getData = (data) => {
+        console.log(data)
+        props.onSubmit(data)
+    }
+
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar relative bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -19,14 +34,20 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-center">
-                <Link to={'/'} className="btn btn-ghost normal-case text-xl">Myfilmlist</Link>
+                <Link to={'/'} className="btn btn-ghost normal-case text-xl">
+                    <span></span>
+                    Myfilmlist
+                </Link>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-ghost btn-circle">
+                {isClick && <SearchMobile liftData={getData} close={handleClose} />}
+                <button onClick={() => handleChange()} className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
             </div>
-        </div>
+
+
+        </div >
 
     )
 }

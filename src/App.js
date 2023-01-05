@@ -8,7 +8,6 @@ import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import About from './pages/About';
-import './App.css';
 
 function App() {
   const [url, setUrl] = useState('')
@@ -26,7 +25,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar onSubmit={getData} />
       <Routes>
         <Route path='/' element={<Homepage onSubmit={getData} />} />
         <Route path='/genre' >

@@ -53,6 +53,32 @@ export class DetailMovie extends Component {
             })
     }
 
+    componentDidUpdate(pP) {
+        if (pP.data !== this.props.data) {
+            axios.get(`${process.env.REACT_APP_BASE_URL}/movie/${this.props.data}`, {
+                params: {
+                    api_key: process.env.REACT_APP_TMDB_KEY
+                }
+            })
+                .then(Response => {
+                    console.log(Response.data)
+                    this.setState({ Detail: Response.data })
+                    this.setState({ Genres: Response.data.genres })
+                })
+
+            //GET CAST
+            axios.get(`${process.env.REACT_APP_BASE_URL}/movie/${this.props.data}/credits`, {
+                params: {
+                    api_key: process.env.REACT_APP_TMDB_KEY
+                }
+            })
+                .then(Response => {
+                    console.log(Response.data.cast)
+                    this.setState({ Cast: Response.data.cast })
+                })
+        }
+    }
+
     render() {
         return (
             <section className='container mx-auto' >
@@ -60,7 +86,7 @@ export class DetailMovie extends Component {
                 <article className='px-4 py-6 bg-cover bg-center' style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${process.env.REACT_APP_IMG_URL}${this.state.Detail.backdrop_path})` }}>
                     <div className='grid gap-4'>
                         <div className='justify-self-end'>
-                            <a href={this.state.Detail.homepage} className='bg-white rounded-full p-1 inline-block'>
+                            <a href={this.state.Detail.homepage} target='_blank' rel="noopener noreferrer" className='bg-white rounded-full p-1 inline-block'>
                                 <GlobeAltIcon className='h-6 w-6' />
                             </a>
                         </div>
@@ -100,7 +126,7 @@ export class DetailMovie extends Component {
                                     <div className='h-16 w-16 bg-cover bg-center rounded-full' style={{ backgroundImage: `url(${process.env.REACT_APP_IMG_URL}${Cast.profile_path}` }}>
                                     </div>
                                     <div className='self-center'>
-                                        <p className=''>{Cast.character}</p>
+                                        <p className='text-quaternary'>{Cast.character}</p>
                                         <h3 className='font-bold'>{Cast.name}</h3>
                                     </div>
                                 </div>

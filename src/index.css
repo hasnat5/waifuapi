@@ -14,14 +14,14 @@
     }
     
     h2{
-        @apply text-3xl font-bold;
+        @apply text-3xl font-bold text-secondary;
     }
     
     h3{
-        @apply font-medium text-xl;
+        @apply font-medium text-xl text-secondary;
     }
 
     p{
-        @apply text-base;
+        @apply text-base ;
     }
 }

@@ -8,9 +8,10 @@ module.exports = {
       },
 
       colors: {
-        primary: "#F2F4F8",
-        secondary: "",
-        thirdy: "#F2F4F8"
+        primary: "#FAFAFA", //FBF9E3
+        secondary: "#243850",
+        tertiary: "#F7D08B",
+        quaternary: "#848588",
       }
 
     },
@@ -20,3 +21,7 @@ module.exports = {
     themes: ["lofi",],
   },
 }
+
+//https://www.flaticon.com/free-icon/clapperboard_2184561?term=cinema&page=2&position=19&origin=search&related_id=2184561
+//https://www.flaticon.com/free-icon/cinema_2828307?related_id=2828307
+//https://www.flaticon.com/free-icon/clapperboard_9217183

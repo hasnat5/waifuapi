@@ -19,7 +19,7 @@ export default class Homepage extends Component {
         super(props)
 
         this.state = {
-            Title: []
+            // Title: []
         }
     }
 
@@ -38,13 +38,13 @@ export default class Homepage extends Component {
         return (
             <main onSubmit={this.getData} className='container bg-white mx-auto'>
                 <section className='bg-cover h-36 grid mb-8' style={{ backgroundImage: `url(${jumbotron})` }}>
-                    <input onChange={({ target }) => this.handleSearch(target.value)} type="text" placeholder="Search movie" className="font-poppins justify-self-center mt-28 input input-bordered input-md w-full max-w-xs" />
+                    {/* <input onChange={({ target }) => this.handleSearch(target.value)} type="text" placeholder="Search movie" className="font-poppins justify-self-center mt-28 input input-bordered input-md w-full max-w-xs" /> */}
                 </section>
 
-                <section className=''>
+                {/* <section className=''>
                     <h2 className='font-poppins px-4 mb-4'>Result Search</h2>
                     <SearchMovie title={this.state.Title} onSubmit={this.getData} />
-                </section>
+                </section> */}
 
                 <section className='mb-5'>
                     <h2 className='font-poppins px-4 mb-4'>Discover</h2>
