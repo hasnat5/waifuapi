@@ -9,7 +9,8 @@ export class DetailMovie extends Component {
         this.state = {
             Detail: [],
             Genres: [],
-            Cast: []
+            Cast: [],
+            Videos: []
 
         }
 
@@ -48,9 +49,10 @@ export class DetailMovie extends Component {
             }
         })
             .then(Response => {
-                console.log(Response.data)
-                // this.setState({ Detail: Response.data })
+                console.log(Response.data.results)
+                this.setState({ Videos: Response.data.results })
             })
+
     }
 
     componentDidUpdate(pP) {
@@ -75,6 +77,17 @@ export class DetailMovie extends Component {
                 .then(Response => {
                     console.log(Response.data.cast)
                     this.setState({ Cast: Response.data.cast })
+                })
+
+            //get video trailer
+            axios.get(`${process.env.REACT_APP_BASE_URL}/movie/${this.props.data}/videos`, {
+                params: {
+                    api_key: process.env.REACT_APP_TMDB_KEY
+                }
+            })
+                .then(Response => {
+                    console.log(Response.data.results)
+                    this.setState({ Videos: Response.data.results })
                 })
         }
     }
@@ -117,7 +130,6 @@ export class DetailMovie extends Component {
 
                 <article className='bg-primary px-4 py-6'>
                     <h1 className='mb-6'>Cast</h1>
-
                     {/* CAST */}
                     <div className='grid gap-8 px-4'>
                         {this.state.Cast.slice(0, 6).map((Cast, idx) => {
@@ -133,6 +145,31 @@ export class DetailMovie extends Component {
                             )
                         })}
                     </div>
+                </article>
+
+                <article>
+                    <h1 className='mb-6'>Trailer</h1>
+                    {/* TRAILER */}
+
+                    {this.state.Videos.map((Videos, idx) => {
+                        if (Videos.type === 'Trailer') {
+                            // let myBest = []
+                            // myBest.push(idx)
+                            // let jawaban = myBest.map((i) => {
+                            //     return i
+                            // })
+                            // console.log(jawaban.join(''))
+                            return (
+                                <div key={idx}>
+                                    <h3>{Videos.type}</h3>
+                                    <p>{Videos.key}</p>
+                                    <p>{idx}</p>
+                                    {/* target='_blank' rel="noopener noreferrer" */}
+                                    <a href={`https://www.youtube.com/embed/${Videos.key}`}>{Videos.name}</a>
+                                </div>
+                            )
+                        }
+                    })}
                 </article>
 
             </section >

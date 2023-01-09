@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Card from '../components/Card'
+// import Card from '../components/Card'
+import { Link } from 'react-router-dom'
+import { BsFillStarFill } from 'react-icons/bs'
+
 
 export class SearchMovie extends Component {
     constructor(props) {
@@ -49,11 +52,23 @@ export class SearchMovie extends Component {
 
     render() {
         return (
-            <section className='container min-w-full mt-9' >
-                <div className='grid grid-flow-col-dense overflow-x-scroll'>
+            <section className='container mx-auto overflow-y-auto' >
+                <div className='grid gap-6'>
                     {this.state.Search.map((Search, idx) => {
                         return (
-                            <Card key={idx} data={Search} tampil={this.handleTampil.bind(this, Search)} />
+                            // <Card key={idx} data={Search} tampil={this.handleTampil.bind(this, Search)} />
+                            <Link onClick={this.handleTampil.bind(this, Search)} to='/detail' key={idx} className='flex gap-5' >
+                                <img className='w-3/12 h-fit rounded-xl' src={`${process.env.REACT_APP_IMG_URL}${Search.poster_path}`} alt="" />
+
+                                <div>
+                                    <h3>{Search.title}</h3>
+                                    <div className='flex items-center gap-2'>
+                                        <BsFillStarFill className='text-yellow-400' />
+                                        <p>{Search.vote_average}</p>
+                                    </div>
+                                    <p>{Search.release_date}</p>
+                                </div>
+                            </Link>
                         )
                     })}
                 </div>

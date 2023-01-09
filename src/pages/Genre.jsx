@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { IoChevronForward } from 'react-icons/io5'
 
 export class Genre extends Component {
     constructor(props) {
@@ -31,15 +32,18 @@ export class Genre extends Component {
 
     render() {
         return (
-            <div onSubmit={this.handleId}>
-                {this.state.Genre.map(Genre => {
-                    return (
-                        <div key={Genre.id}>
-                            <Link to={`./${Genre.name}`} onClick={this.handleId.bind(this, Genre)} >{Genre.name}</Link>
-                        </div>
-                    )
-                })}
-            </div>
+            <section className='bg-primary container mx-auto px-4 py-4' onSubmit={this.handleId}>
+                <div className='grid grid-cols-2 gap-2'>
+                    {this.state.Genre.map(Genre => {
+                        return (
+                            <Link to={`./${Genre.name}`} onClick={this.handleId.bind(this, Genre)} className='inline-flex items-center gap-1 p-2 bg-white text-secondary rounded' key={Genre.id}>
+                                <IoChevronForward />
+                                <p>{Genre.name}</p>
+                            </Link>
+                        )
+                    })}
+                </div>
+            </section>
         )
     }
 }

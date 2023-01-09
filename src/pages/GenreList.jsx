@@ -34,7 +34,7 @@ export class GenreList extends Component {
         return (
             <section className='container mx-auto'>
                 <div className='grid gap-6'>
-                    <h1>Result of {this.props.genre.name}</h1>
+                    <h1 className='px-4'>Result of {this.props.genre.name}</h1>
                     {this.state.GenreResult.map((Film, idx) => {
                         return (
                             <Link onClick={this.handleTampil.bind(this, Film)} to='/detail' key={idx} className='flex gap-5 px-4' >
