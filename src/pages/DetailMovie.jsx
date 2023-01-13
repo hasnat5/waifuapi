@@ -148,52 +148,7 @@ export class DetailMovie extends Component {
                         </div>
                     </article>
 
-                    <article>
-                        <h1 className='mb-6'>Trailer</h1>
-                        {/* TRAILER */}
 
-                        {this.state.Videos.map((Videos, idx) => {
-                            if (Videos.type === 'Trailer') {
-                                // let myBest = []
-                                // myBest.push(idx)
-                                // let jawaban = myBest.map((i) => {
-                                //     return i
-                                // })
-                                // console.log(jawaban.join(''))
-                                return (
-                                    <div key={idx}>
-                                        <h3>{Videos.type}</h3>
-                                        <p>{Videos.key}</p>
-                                        <p>{idx}</p>
-                                        {/* target='_blank' rel="noopener noreferrer" */}
-                                        <a href={`https://www.youtube.com/embed/${Videos.key}`}>{Videos.name}</a>
-                                    </div>
-                                )
-                            }
-                        })}
-                    </article>
-
-                    <article>
-                        <h1 className='mb-6'>Video</h1>
-                        {/* VIDEO */}
-
-                        {this.state.Videos.map((Videos, idx) => {
-                            if (Videos.type === 'Clip' || Videos.type === 'Trailer') {
-                                return (
-                                    <div key={idx}>
-                                        {/* <iframe width="420" height="345" src={`https://www.youtube.com/embed/${Videos.key}`}>
-                                        </iframe> */}
-
-                                        <div>
-                                            <h3>{Videos.type}</h3>
-                                            <p>{Videos.key}</p>
-                                            <p>{idx}</p>
-                                        </div>
-                                    </div>
-                                )
-                            }
-                        })}
-                    </article>
                 </div>
 
             </section >
