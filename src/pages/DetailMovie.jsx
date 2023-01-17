@@ -148,7 +148,6 @@ export class DetailMovie extends Component {
                         </div>
                     </article>
 
-
                 </div>
 
             </section >
